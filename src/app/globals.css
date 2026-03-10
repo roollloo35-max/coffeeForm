@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #182532;
+  --my-shadow: 0 0px 5px 3px #33333340 
+
+}
+
+
+body {
+  background: var(--background) ;
+  padding: 0;
+
+  
+}
+
+/* Вся полоса прокрутки */
+::-webkit-scrollbar {
+  width: 6px;               /* ширина для вертикального скролла */
+  height: 12px;              /* высота для горизонтального скролла */
+}
+
+/* Дорожка (трек) */
+::-webkit-scrollbar-track {
+  background: #EDE2D9;
+  border-radius: 0;
+}
+
+/* Ползунок (бегунок) */
+::-webkit-scrollbar-thumb {
+  background: #213346;
+  border-radius: 0;
+  outline: none;
+}
+
+
+
+/* Кнопки (стрелки) — редко используются */
+::-webkit-scrollbar-button {
+  display: none;             /* часто их просто скрывают */
+}
+
+
+textarea::-webkit-scrollbar{
+  display: none;
+}

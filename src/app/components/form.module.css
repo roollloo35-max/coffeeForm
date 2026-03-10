@@ -1,0 +1,18 @@
+:root {
+    --background-color: #EDE2D9;
+    --outline: #18253270;
+    --caret-color: #9c530f
+}
+
+.text_form{
+    display: block;
+    width: 100%;
+    background-color: var(--background-color);
+    margin-top: 60px;
+    padding: 16px 18px 6px 18px ;
+    outline: none;
+    color: #343E47;
+    font-size: 16px;
+    border-radius: 10px;
+    caret-color: #9c530f;
+}
