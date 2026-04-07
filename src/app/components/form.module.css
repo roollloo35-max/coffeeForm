@@ -13,6 +13,16 @@
     outline: none;
     color: #343E47;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 16px;
     caret-color: #9c530f;
 }
+
+
+.promo__bi{
+
+}
+
+/* .promo__bi{ */
+    /* content: '';
+    background: ;
+} */

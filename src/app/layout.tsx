@@ -1,8 +1,8 @@
+
+import "./globals.css"
 import type { Metadata } from "next";
 import { NotificationProvider } from "@/hooks/providerAlert";
-import "./globals.css";
 import SmoothScroll from "./components/smoothScroll";
-
 
 
 export const metadata: Metadata = {

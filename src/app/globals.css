@@ -2,22 +2,38 @@
 
 :root {
   --background: #182532;
-  --my-shadow: 0 0px 5px 3px #33333340 
-
+  --my-shadow: 0 0px 5px 3px #33333340
 }
 
 
 body {
-  background: var(--background) ;
+  background: #182532;
   padding: 0;
 
-  
+
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('/gray-texture.jpg');
+  /* background-size: 200px 200px; */
+  background-repeat: repeat;
+  opacity: 0.1;
 }
 
 /* Вся полоса прокрутки */
 ::-webkit-scrollbar {
-  width: 6px;               /* ширина для вертикального скролла */
-  height: 12px;              /* высота для горизонтального скролла */
+  width: 6px;
+  /* ширина для вертикального скролла */
+  height: 12px;
+  /* высота для горизонтального скролла */
 }
 
 /* Дорожка (трек) */
@@ -37,10 +53,11 @@ body {
 
 /* Кнопки (стрелки) — редко используются */
 ::-webkit-scrollbar-button {
-  display: none;             /* часто их просто скрывают */
+  display: none;
+  /* часто их просто скрывают */
 }
 
 
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
   display: none;
 }

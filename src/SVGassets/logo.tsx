@@ -2,24 +2,26 @@
 
 
 import styles from '@/SVGassets/logo.module.css'
-import React, { useRef } from 'react';
+import React, { useRef} from 'react';
 import { SteamAnim } from '@/hooks/steamAnim';
 
-
+export const revalidate = 0;
 
 export default function Logo() {
+
+
 
     const ref1 = useRef<SVGPathElement>(null);
     const ref2 = useRef<SVGPathElement>(null);
     const ref3 = useRef<SVGPathElement>(null);
 
+    const patchRefs = useRef([ref1, ref2, ref3]).current
+
     // Вызываем хук с массивом рефов и параметрами
-    SteamAnim([ref1, ref2, ref3], {
-        amplitude: 0.2,
-        speed: 0.015,
-        waveFactor: 0.015,
-        basePhase: 0,
-        timeScale: 3.5,
+    SteamAnim(patchRefs, {
+        amplitude: 5,
+        speed: 1.2,
+        fps: 30,
     });
 
     return (
