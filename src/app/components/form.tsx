@@ -53,7 +53,7 @@ export default function Form() {
 
         const ReviewSchema = z.object({
             name: z.string().min(1, "Имя пользователя обязательно"),
-            email: z.string().email("некоректный email"),
+            email: z.email("некоректный email"),
             review: z.string().min(10, "Отзыв слишком короткий")
 
         })
