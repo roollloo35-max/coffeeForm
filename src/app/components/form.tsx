@@ -69,25 +69,25 @@ export default function Form() {
 
 
 
-            // const { error } = await createClient()
-            //     .from('clienReview')
-            //     .insert(validateData)
+            const { error } = await createClient()
+                .from('clienReview')
+                .insert(validateData)
 
-            // if (error) {
-            //     console.error("Insert error", error)
+            if (error) {
+                console.error("Insert error", error)
 
-            //     showNotification(
-            //         <div className={`${bellota.className} bg-[#EDE2D9] flex flex-col w-full items-center rounded-[18px] shadow-(--my-shadow)`}>
-            //             <h2 className="text-center text-[#000] pt-[30px] md:text-[150%] text-[18px] text-[700]]">
-            //                 Ошибка отправки !!!
-            //             </h2>
-            //             <p className="text-center text-[#333] mt-[20px] pb-[30px] w-[75%] text-[100%]"  >
-            //                 Попробуйте позже.
-            //             </p>
-            //         </div>, 1500
-            //     )
+                showNotification(
+                    <div className={`${bellota.className} bg-[#EDE2D9] flex flex-col w-full items-center rounded-[18px] shadow-(--my-shadow)`}>
+                        <h2 className="text-center text-[#000] pt-[30px] md:text-[150%] text-[18px] text-[700]]">
+                            Ошибка отправки !!!
+                        </h2>
+                        <p className="text-center text-[#333] mt-[20px] pb-[30px] w-[75%] text-[100%]"  >
+                            Попробуйте позже.
+                        </p>
+                    </div>, 1500
+                )
 
-            // }
+            }
 
             setIsSubmit(true)
 
