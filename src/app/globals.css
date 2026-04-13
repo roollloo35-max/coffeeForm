@@ -13,6 +13,9 @@ body {
 
 }
 
+
+
+
 body::before {
   content: '';
   position: fixed;
@@ -24,7 +27,8 @@ body::before {
   pointer-events: none;
   background-image: url('/gray-texture.jpg');
   /* background-size: 200px 200px; */
-  /* background-repeat: repeat; */
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover ;
   opacity: 0.1;
 }
@@ -62,3 +66,5 @@ body::before {
 textarea::-webkit-scrollbar {
   display: none;
 }
+
+
