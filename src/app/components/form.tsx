@@ -1,14 +1,21 @@
 'use client'
 
-import { useNotification, } from "@/hooks/providerAlert";
 import React, { useState, useRef, SubmitEventHandler, useEffect } from "react";
-import styles from "@/app/components/form.module.css";
-import { bellota } from "@/fonts/font";
-import { createClient } from "@/app/lib/supabase/client";
-import z from "zod";
-import { div, section } from "framer-motion/client";
-import SendReview from "@/SVGassets/sendReview";
+import z, { email, refine } from "zod";
 
+
+import { useNotification, } from "@/hooks/providerAlert";
+import { createClient } from "@/app/lib/supabase/client";
+
+
+import styles from "@/app/components/form.module.css";
+
+
+import { bellota } from "@/fonts/font";
+
+
+import TwoGis from "@/SVGassets/2gis";
+import Yndex from "@/SVGassets/yandex";
 
 
 export default function Form() {
@@ -16,6 +23,20 @@ export default function Form() {
     const [isSubmit, setIsSubmit] = useState(false);
     const scrollTO = useRef<HTMLDivElement>(null);
 
+
+    const whiteListEmail = ["mail.ru",
+        "yandex.ru",
+        "ya.ru",
+        "rambler.ru",
+        "bk.ru",
+        "list.ru",
+        "inbox.ru",
+        "internet.ru",
+        "gmail.com",
+        "outlook.com",
+        "hotmail.com",
+        "yahoo.com",
+        "mail.ua"]
 
     let [count, setCount] = useState("");
     let [nameCount, setNameCount] = useState("");
@@ -53,7 +74,15 @@ export default function Form() {
 
         const ReviewSchema = z.object({
             name: z.string().min(1, "Имя пользователя обязательно"),
-            email: z.email("некоректный email"),
+            email: z.email({ pattern: z.regexes.rfc5322Email }).refine((email) => {
+
+                const domain = email.split('@')[1]
+
+                return whiteListEmail.includes(domain)
+            }, {
+                message: "некорректное доменное имя"
+            }
+            ),
             review: z.string().min(10, "Отзыв слишком короткий")
 
         })
@@ -165,15 +194,22 @@ export default function Form() {
                             setCount(e.target.value)
                         }}
                         id="user_review"
-                        className={`block w-full   pl-[16px] pt-[16px] pb-[25px] pr-[18px] outline-none carget-[#9c530f]  text-[16px] text-[#343E47] h-[200px] `}
+                        className={`block w-full resize-none pl-[16px] pt-[16px] pb-[25px] pr-[18px] outline-none carget-[#9c530f]  text-[16px] text-[#343E47] h-[200px] `}
                         name="review"
                         placeholder="Поделитесь впечатлениями о своем визите в наше заведение: "
                         value={count}
                         maxLength={600}
                         ref={textareaRef}
+
                     // required
                     />
-                    <p className="text-[#AE6931] pb-2 pl-4"> {count.length} <span> / 600 </span> </p>
+                    <div className=" pb-2 border-box owerflow-hidden flex flex-row justify-between pt-3 px-4 w-full  border-t-[1] border-[#AE693150] ">
+                        <p className="text-[#AE6931]"> {count.length} <span> / 600 </span> </p>
+                        <div className="flex flex-row w-[20%] md:w-[15%] justify-between  ">
+                            <div> <a href="#Yandex" className="block"><Yndex /></a></div>
+                            <div><a href="#2gis" className="block" ><TwoGis /></a></div>
+                        </div>
+                    </div>
                 </div>
 
                 <button
@@ -212,13 +248,13 @@ function Promo() {
         try {
 
             await navigator.clipboard.writeText(promo.current?.textContent ?? '')
-            
-             showNotification(
+
+            showNotification(
                 <div className={`${bellota.className} bg-[#EDE2D9] flex flex-1 w-full items-center justify-center rounded-[18px] shadow-(--my-shadow) pb-6`}>
                     <h2 className="text-center text-[#000] pt-[30px] md:text-[150%] text-[18px] text-[700]]">
                         Промокод скопирован  !!!
                     </h2>
-                    
+
                 </div>, 2000
             )
 
@@ -242,6 +278,9 @@ function Promo() {
                             COFFEE$15
                         </p>
                         <button type="button" onClick={handleCopy} name="button" id="copyButton" className="text-[18px] cursor-pointer select-none text-[#BDA490] border-1 w-[90%]  border-[#AE6931] rounded-[16px] p-4 transition hover:scale-[1.05] ">СКОПИРОВАТЬ</button>
+
+
+
                     </div>
                 </div>
 

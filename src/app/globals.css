@@ -24,7 +24,8 @@ body::before {
   pointer-events: none;
   background-image: url('/gray-texture.jpg');
   /* background-size: 200px 200px; */
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
+  background-size: cover ;
   opacity: 0.1;
 }
 
