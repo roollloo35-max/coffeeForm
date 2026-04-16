@@ -11,7 +11,7 @@ export default function Home() {
       <main className="col-start-2 flex flex-col items-center justify-center mt-[30px] relative"  >
         <Image
           className="fixed md:top-45 top-1 left-[-35] md:left-[24%] xl:left-[32%] opacity-[.4] scale-[.5] md:scale-[.4] xl:scale-[.5]  z-[-50]"
-          src={'/book.png'}
+          src={'https://roollloo35-max.github.io/images/book.png'}
           alt="book"
           width={207}
           height={190}
@@ -19,7 +19,7 @@ export default function Home() {
         />
         <Image
           className="fixed md:top-30 top-5 right-1 md:right-[24%] xl:right-[32%]  opacity-[.35] scale-[.35] md:scale-[.4] xl:scale-[.5]  z-[-50]"
-          src={'/spoon.png'}
+          src={'https://roollloo35-max.github.io/images/spoon.png'}
           alt="book"
           width={207}
           height={190}
@@ -28,7 +28,7 @@ export default function Home() {
 
         <Image
           className="fixed md:top-80 top-40 left-[-45] rotate-y-[180deg] xl:left-[30%]  md:left-[22%] opacity-[.35] scale-[.3] md:scale-[.4] xl:scale-[.5]  z-[-50]"
-          src={'/cake.png'}
+          src={'https://roollloo35-max.github.io/images/cake.png'}
           alt="book"
           width={207}
           height={190}
@@ -36,7 +36,7 @@ export default function Home() {
         />
         <Image
           className="fixed md:top-80 top-35 right-[-15] md:right-[22%] xl:right-[30%] opacity-[.45] scale-[.2] md:scale-[.4] xl:scale-[.5]  z-[-50]"
-          src={'/chery.png'}
+          src={'https://roollloo35-max.github.io/images/chery.png'}
           alt="book"
           width={207}
           height={190}
@@ -45,7 +45,7 @@ export default function Home() {
 
         <Image
           className="fixed md:top-130 top-100 right-[-15] md:right-[24%] xl:right-[32%] rotate-z-[-20deg] opacity-[.35] scale-[.3] md:scale-[.4] xl:scale-[.5]  z-[-50]"
-          src={'/music_t.png'}
+          src={'https://roollloo35-max.github.io/images/music_t.png'}
           alt="book"
           width={207}
           height={190}
@@ -54,7 +54,7 @@ export default function Home() {
 
         <Image
           className="fixed md:top-150 top-100 left-[-45] md:left-[22%] xl:left-[30%] rotate-z-[10deg] opacity-[.35] scale-[.4] md:scale-[.5] xl:scale-[.6]  z-[-50]"
-          src={'/bulka.png'}
+          src={'https://roollloo35-max.github.io/images/bulka.png'}
           alt="book"
           width={207}
           height={190}
